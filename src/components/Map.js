@@ -2,8 +2,8 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import Geoman from "./Geoman";
 
 const Map = () => {
-  const position = [48.863247, 2.350747];
-  const zoomLv = 13;
+  const position = [50.940474211933974, 6.960182189941407];
+  const zoomLv = 15;
 
   return (
     <MapContainer center={position} zoom={zoomLv} scrollWheelZoom={true}>

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLeafletContext } from "@react-leaflet/core";
 import "@geoman-io/leaflet-geoman-free";
 import "@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css";
+import { click } from "@testing-library/user-event/dist/click";
 
 const Geoman = () => {
   const context = useLeafletContext();
@@ -13,6 +14,13 @@ const Geoman = () => {
 
     leafletContainer.pm.addControls({
       drawMarker: false
+    });
+
+    leafletContainer.on("click", (e) => {
+      const lat = e.latlng.lat;
+      const lng = e.latlng.lng;
+
+      console.log(`Clicked at Latitude: ${lat}, Longitude: ${lng}`);
     });
 
     // leafletContainer.pm.setGlobalOptions({ pmIgnore: false });
